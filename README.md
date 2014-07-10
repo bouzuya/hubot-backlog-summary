@@ -6,6 +6,14 @@ A Hubot script for retrieving Backlog project summary.
 
     $ npm install bouzuya/hubot-backlog-summary
 
+or
+
+    $ npm install git://github.com/bouzuya/hubot-backlog-summary.git
+
+or
+
+    $ npm install git://github.com/bouzuya/hubot-backlog-summary.git\#0.1.1
+
 ## Usage
 
     $ # install npm package
