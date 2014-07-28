@@ -10,6 +10,7 @@
 #   HUBOT_BACKLOG_SUMMARY_USERNAME
 #   HUBOT_BACKLOG_SUMMARY_PASSWORD
 #   HUBOT_BACKLOG_SUMMARY_USE_HIPCHAT
+#   HUBOT_BACKLOG_SUMMARY_USE_SLACK
 #
 # Commands:
 #   hubot backlog-summary <project> - display Backlog project summary
@@ -115,14 +116,17 @@ module.exports = (robot) ->
           res.send('error!')
         else
           isHipChat = process.env.HUBOT_BACKLOG_SUMMARY_USE_HIPCHAT?
+          isSlack = process.env.HUBOT_BACKLOG_SUMMARY_USE_SLACK?
           res.send [
             if isHipChat then '/quote ' else ''
+            if isSlack then '```\n' else ''
             [
               'backlog-summary ' + projectKey + ' result:'
               'milestone:'
               ' All: closed/all (estimated closed/all, actual)'
               messages.join('')
             ].join('\n')
+            if isSlack then '\n```' else ''
           ].join('')
     , (e) ->
       robot.logger.error(e)

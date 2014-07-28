@@ -28,6 +28,7 @@ or
     $ export HUBOT_BACKLOG_SUMMARY_USERNAME='...'
     $ export HUBOT_BACKLOG_SUMMARY_PASSWORD='...'
     $ export HUBOT_BACKLOG_SUMMARY_USE_HIPCHAT='0'
+    $ export HUBOT_BACKLOG_SUMMARY_USE_SLACK='0'
 
     $ # start hubot
     $ hubot
